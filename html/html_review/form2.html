@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form2</title>
+</head>
+<body>
+    <div class="container">
+        <h1>회원가입 폼 입니다</h1>
+        <form action="signup.jsp">
+            <label for="email">이메일</label>
+            <input type="email" id="email" name="email">
+
+            <fieldset>
+                <legend>성별 정보 선택</legend>
+                <label>
+                <input type="radio" name="gender" value="man" checked>남자
+                </label>
+                <label>
+                <input type="radio" name="gender" value="woman">여자
+                </label>
+            </fieldset>
+
+             <fieldset>
+                <legend>취미 정보 선택</legend>
+                <label>
+                <input type="checkbox" name="hobby" value="surfing">서핑</label>
+
+                <label>
+                    <input type="checkbox" name="hobby" value="snowboarding">스노보드</label>
+                    <label>
+                        <input type="checkbox" name="hobby" value="skateboard">스케이트보드</label>
+                
+             </fieldset>
+
+             <label for="job">직업</label>
+             <select name="job" id="job">
+                <option value="athlete">운동선수</option>
+                <option value="teacher">선생님</option>
+                <option value="programmer">프로그래머</option>
+             </select>
+
+             <br>
+            <label for="lunch">점심 선택</label>
+            <select name="lunch" id="lunch">
+                <optgroup label="분식">
+                    <option value="떡볶이">떡볶이</option>
+                </optgroup>
+                <optgroup label="양식">
+                    <option value="크림파스타">크림파스타</option>
+                </optgroup>
+                <optgroup label="한식">
+                    <option value="불고기">불고기</option>
+                </optgroup>
+            </select>
+            <br>
+
+            <label for="attached">첨부파일</label>
+            <input type="file" id="attached" name="attached">
+            <br>
+            <label for="comment">하고싶은 말</label>
+            <br>
+            <textarea name="comment" id="comment" ></textarea>
+            <br>
+            <button type="submit">가입</button>
+
+        
+
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- html요소는 head 요소와 body 요소를 자식 요소(child element)로 가지고 있다-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step03_BlockElement.html</title>
+    <style>
+        /* 요소명 선택자 */
+        div {
+            color: blue;
+        }
+        /* 클래스 선택자 --> 어떤 요소들을 그룹으로 관리하고자 할 때 클래스 선택자 활용 */
+        .my-class{
+            background-color: antiquewhite;
+        }
+        /* 아이디 선택자 */
+        #one {
+            font-size: 30px;
+            font-weight: bold;
+        }
+        /* 아이디가 two인 요소의 자식 중에서 img를 선택*/
+        #two > img {
+            background-color: greenyellow;
+            width: 200px;
+
+        }
+        #three > img {
+            background-color: pink;
+            width: 200px;
+        }
+    </style>
+</head>
+<body> 
+    <!-- body 요소는 여러개의 div를 자식 요소로 가지고 있다.-->
+    <div>div 요소는 문단을 나타낼 때 사용합니다.</div>
+    <div class="my-class">문단에 해당하는 것은 문자열 뿐만이 아니고 다른 여려가지 요소도 될 수 있습니다.</div>
+    <div class="my-class" id="one">div 요소는 폭을 100% 차지하는 block 요소 입니다.</div>
+    <div id="two">
+        <!-- 이 div 요소는 두개의 img를 자식 요소로 가지고 있다.-->
+        <img src="images/kim1.png">
+        <img src="images/rabbit_1.png">
+    </div>
+    <div id="three">
+        <img src="images/image1.png">
+        <img src="images/image2.png">
+    </div>
+    <!-- body는 4개의 자식요소(직계)와 6개의 자손 요소를 가지고 있다-->
+</body>
+</html>

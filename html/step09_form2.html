@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>step09_form2.html</title>
+    <style>
+      .container {
+        width: 768px;
+        /* 위,아래 마진 0 좌,우 마진 auto */
+        margin: 0 auto;
+      }
+      textarea {
+        width: 100%;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>회원 가입 폼 입니다</h1>
+      <form action="signup.jsp">
+        <label for="email">이메일</label>
+        <input type="email" id="email" name="email" /><br />
+        <fieldset>
+          <legend>성별 정보 선택</legend>
+          <!-- legend태그는 fieldset 요소의 caption을 정의할 때 사용 -->
+          <label>
+            <input type="radio" name="gender" value="man" checked /> 남자
+            <!-- value는 클라이언트가 선택했을 때 서버로 넘어가는 정보
+                    gender라는 이름으로 man이 넘어가거나 woman이 넘어감 -->
+            <!-- 페이지 로딩했을 때 기본으로 체크되어있게 설정하려면 checked -->
+            <!-- value값이 제출했을 때 서버에 넘어감 -->
+          </label>
+          <label>
+            <input type="radio" name="gender" value="woman" /> 여자
+          </label>
+          <!-- input type="radio"의 경우 name이 같으면 같은 속성으로 묶임 -->
+        </fieldset>
+
+        <!-- lable 요소의 사용 두가지
+                1. label for 와 input id 매치
+                2. labbel의 자식 요소로 input 사용 -->
+        <!-- 라디오나 체크박스를 선택하거나 label(글씨)를 선택해도 둘다 선택이 되는 이유는 서로 연결 시켜 놨기 때문이다 -->
+
+        <!-- 체크박스는 여러개 선택가능 -> 서버에 배열(방번호가 지정된 데이터 저장소)로 저장-->
+        <fieldset>
+          <legend>취미 정보 선택</legend>
+          <label>
+            <input type="checkbox" name="hobby" value="soccer" /> 축구
+          </label>
+          <label>
+            <input type="checkbox" name="hobby" value="baking" /> 베이킹
+          </label>
+          <label>
+            <input type="checkbox" name="hobby" value="piano" /> 피아노
+          </label>
+          <label>
+            <input type="checkbox" name="hobby" value="etc" /> 기타
+          </label>
+        </fieldset>
+
+        <label for="job">직업</label>
+        <select name="job" id="job">
+          <!-- option에 value가 없으면 innerText가 전송된다. -->
+          <!-- 만약 value가 없다면 선택을 제출했을때 job이라는 name으로 선택 이라는 문자열이 전송된다.
+                따라서 value="" 아무것도 없는 값을 설정해 줘야함 -->
+          <option value="">선택</option>
+          <option value="programmer">프로그래머</option>
+          <option value="doctor">의사</option>
+          <option value="pianist">피아니스트</option>
+          <option value="etc">기타</option>
+        </select>
+        <br />
+
+        <label for="lunch">점심 선택</label>
+        <!-- option에 value가 없으면 innerText가 전송된다. -->
+        <select name="lunch" id="lunch">
+          <optgroup label="분식">
+            <option>라면</option>
+            <option>쫄면</option>
+            <option>김밥</option>
+          </optgroup>
+          <optgroup label="중식">
+            <option>자장면</option>
+            <option>짬뽕</option>
+            <option>군만두</option>
+          </optgroup>
+        </select>
+        <br />
+
+        <label for="myFile">첨부파일</label>
+        <input type="file" id="myFile" name="myFile" />
+        <br />
+
+        <label for="comment">하고싶은 말</label>
+        <br />
+        <textarea name="comment" id="comment"></textarea>
+        <!-- input text는 개행기호\n 안됨 반면 textarea는 \n 입력 가능 -->
+        <br />
+
+        <button type="submit">가입</button>
+      </form>
+    </div>
+  </body>
+</html>

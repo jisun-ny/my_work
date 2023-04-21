@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>step09_form4.html</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>form 요소에 기본값 설정하기</h1>
+      <p>
+        서버에서 클라이언트에게 폼을 응답할 때 이미 저장된 값을 출력한 체로
+        응답을 해야할 때가 있다 예를들어 회원 가입된 정보 보기로 이동한다면 DB에
+        이미 저장된 내용을 출력해 주어야 한다. ex. 회원가입 되어있는 사이트에서
+        정보 수정하기 들어갔을 경우 이미 내 정보가 입력된 채로 화면이 뜨는
+        경우들
+      </p>
+      <form action="update.jsp">
+        이메일
+        <input type="email" name="email" value="aaa@naver.com" />
+        <br />
+
+        <fieldset>
+          <legend>취미 정보 선택</legend>
+          <label>
+            <input type="checkbox" name="hobby" value="soccer" /> 축구
+          </label>
+          <label>
+            <input type="checkbox" name="hobby" value="baking" checked /> 베이킹
+          </label>
+          <label>
+            <input type="checkbox" name="hobby" value="piano" checked /> 피아노
+          </label>
+          <label>
+            <input type="checkbox" name="hobby" value="etc" /> 기타
+          </label>
+        </fieldset>
+
+        <!-- reset 버튼을 누르면 초기값으로 돌아감 -->
+
+        <label for="job">직업</label>
+        <select name="job" id="job">
+          <option value="">선택</option>
+          <option value="programmer">프로그래머</option>
+          <option value="doctor">의사</option>
+          <option value="pianist" selected>피아니스트</option>
+          <option value="etc">기타</option>
+        </select>
+        <br />
+        하고싶은 말
+        <br />
+        <textarea name="comment" rows="10">
+김구라
+해골
+원숭이</textarea
+        >
+        <!-- textarea는 value속성이 존재하지 않음. innertext를 전달. -->
+        <br />
+        <button type="submit">수정</button>
+        <button type="reset">취소</button>
+      </form>
+    </div>
+  </body>
+</html>

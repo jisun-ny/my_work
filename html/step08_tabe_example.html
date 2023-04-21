@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23.04.05_table.html</title>
+    <style>
+        /*h1 요소에 적용할 css*/ 
+        h1 {
+            /*문자열(인라인요소)의 좌우 가운데 정렬( 기본값은 left)*/
+            text-align: center;
+        }
+        /* 선택자 다중 선택 ,로 연결 */
+        th, tfoot {
+            background-color: #283b34; 
+            /*16진수 0123456789abcdef (00~ff| rgb: red green blue 첫 두자리 red 세기
+            다음 두자리 green 세기 다음 blue 세기 */ 
+            /* #000000 검정색 #ff0000 빨간색 #00ff00 초록색 #0000ff 파란색*/
+            /* background-color : rgb(0,0,0) = #000000, rgb(255,0,0) = #ff0000,
+            rgb(255,255,0) = #ffff00, 16진수 ff = 10진수 255 */
+            color: white;
+            font-weight: bold;
+        }
+
+        /* tr의 부모 입장에서 봤을 때 짝수번째 자식 요소 선택, :nth-child()*/
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        td {
+            text-align: center;
+        }
+        caption {
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .spend {
+            color: red;
+            font-weight: bold;
+        }
+        .earning {
+            color: blue;
+            font-weight: bold;
+        }
+        .my-table {
+            border-collapse: collapse;
+        }
+        caption {
+            margin-bottom: 10px;
+            background-color: #283b34;
+            color: white;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>23.04.05 과제 Table 꾸미기</h1>
+    <table border="1" class="my-table">
+        <caption>4월 가계부</caption>
+        <colgroup>
+            <col width="100">
+            <col width="150">
+            <col width="150">
+            <col width="100">
+            <col width="100">
+            <col width="200">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>날짜</th>
+                <th>항목</th>
+                <th>수입</th>
+                <th>지출</th>
+                <th>잔액</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th colspan="3">합계</th>
+                <td>2,550,000</td>
+                <td>620,000</td>
+                <td>1,930,000</td>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>23.04.01</td>
+                <td>월급</td>
+                <td class="earning">2,500,000</td>
+                <td class="spend">0</td>
+                <td>2,500,000</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>23.04.01</td>
+                <td>당월세</td>
+                <td class="earning">0</td>
+                <td class="spend">500,000</td>
+                <td>2,000,000</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>23.04.02</td>
+                <td>요기요 배달</td>
+                <td class="earning">0</td>
+                <td class="spend">20,000</td>
+                <td>1,980,000</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>23.04.02</td>
+                <td>전달 교통비</td>
+                <td class="earning">0</td>
+                <td class="spend">100,000</td>
+                <td>1,880,000</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>23.04.03</td>
+                <td>카드 페이백</td>
+                <td class="earning">50,000</td>
+                <td class="spend">0</td>
+                <td>1,930,000</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>23.04.04</td>
+                <td>내역 없음</td>
+                <td class="earning">0</td>
+                <td class="spend">0</td>
+                <td>1,930,000</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

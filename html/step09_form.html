@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>step09_form.html</title>
+    <style>
+      /* 특정 div를 가운데 정렬하는 방법
+            width를 결정하고 
+            좌우 마진을 auto로 지정하면 좌우 마진이 동일하게 설정되면서
+            가운데 정렬이 된다. */
+      .container {
+        width: 768px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>form 요소 작성하기</h1>
+      <!--  form은 클라이언트가 입력하거나 선택한 정보를 서버에 전송할 양식이다 -->
+      <!-- 이 정보들은 서버의 데이타베이스 DB에 저장된다 -->
+      <!-- 도대체 어디 서버에다가 정보를 제출? -> action 속성에 나타내 줌
+        action: 서버에 전송할 주소-->
+      <form action="login.jsp">
+        <label for="email">이메일</label>
+        <!--  
+            name 속성의 값은 서버에서 필요한 값이다.
+            개발자가 맘대로 정하는 것
+            name을 작성 안하면 서버에서 추출이 안됨 서버는 아이디를 읽어오지 않음 -->
+        <!-- label의 for 속성의 값과 input의 id 값과 같아야함!! -->
+        <!-- label의 innertext의 값이 input 값이라는 걸 연결 시켜줌 -->
+        <input type="text" id="email" name="email" />
+        <label for="pwd">비밀번호</label>
+        <input type="password" name="pwd" id="pwd" />
+        <button type="submit">로그인</button>
+      </form>
+      <!--action = "서버"-->
+    </div>
+  </body>
+</html>

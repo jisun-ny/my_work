@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>step09_form3.html</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>html에서 추가된 폼 요소</h1>
+      <p>
+        웹 브라우저이 종류와 비번별로 지원이 될 수도 있고 안될 수도 있다
+        <a href="http://caniuse.com">여기서 확인</a>
+      </p>
+      <form action="insert.jsp">
+        <!-- 원래는 레이블로 다 코딩해야함.-->
+        색상선택<input type="color" name="color" />
+        <!-- getting rgb-->
+        <br />
+        범위선택<input
+          type="range"
+          name="range"
+          min="0"
+          max="100"
+          step="10"
+          value="30"
+        />
+        <!-- 최댓값, 최솟값, 한번에 몇씩 움직일 것인가, 초기값 -->
+        <br />
+        날짜선택<input type="date" name="date" />
+        <br />
+        시간선택<input type="time" name="time" />
+        <br />
+        날짜, 시간선택<input type="datetime-local" name="datetime" />
+        <br />
+        숫자<input type="number" name="number" min="0" max="10" step="1" />
+        <br />
+        이메일<input type="email" name="email" />
+        <!-- input type email의 경우 모바일인 경우 손가락을 가져다 대면 이메일을 입력하기 최적화 된 키보드가 올라온다. -->
+        <br />
+        <button type="submit">저장</button>
+      </form>
+    </div>
+  </body>
+</html>
