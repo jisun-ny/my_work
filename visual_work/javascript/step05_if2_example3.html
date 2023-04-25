@@ -25,8 +25,8 @@
         */
 
       function check() {
-        let score = document.querySelector('#jumsu').value; //페이지 로딩 시점에 읽어와봐야 비어있을 것이기 때문에 함수 안에 있어야함.
-        let rs = document.querySelector('#result'); //여기 있는 값을 불러와서 변수에 대입
+        let score = document.querySelector("#jumsu").value; //페이지 로딩 시점에 읽어와봐야 비어있을 것이기 때문에 함수 안에 있어야함.
+        let rs = document.querySelector("#result"); //여기 있는 값을 불러와서 변수에 대입
 
         //let rs = document.querySelector('#result').innerText; 이렇게 변수를 만들어버리면
         // rs 변수에는 처음엔 빈 문자열
@@ -34,15 +34,15 @@
         // 변수 rs의 값이 변한다고 <p>의 innerText가 변하는 것이 아니다!!
 
         if (score >= 90) {
-          rs.innerText = 'A';
+          rs.innerText = "A";
         } else if (score >= 80) {
-          rs.innerText = 'B';
+          rs.innerText = "B";
         } else if (score >= 70) {
-          rs.innerText = 'C';
+          rs.innerText = "C";
         } else if (score >= 60) {
-          rs.innerText = 'D';
+          rs.innerText = "D";
         } else {
-          rs.innerText = 'F';
+          rs.innerText = "F";
         }
       }
     </script>
