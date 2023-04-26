@@ -18,7 +18,7 @@
     <script>
       // id가 sendBtn인 곳에 click 이벤트가 일어날 때 실행할 callback 함수 등록
       let sendBtn = document.querySelector("#sendBtn");
-      sendBtn.addEventListener("click", (event) => {
+      sendBtn.addEventListener("click", () => {
         // 1. input 요소의 value 값을 읽어온다
         let inputMsg = document.querySelector("#inputMsg").value;
         // 2. li 요소를 만든다
@@ -26,7 +26,6 @@
         // 3. 만든 li 요소에 innerText로 input 요소에서 읽어온 value값을 넣어준다
         li.innerText = inputMsg;
         // 4. 위에서 만든 li요소를 id가 msgList인 곳에 추가한다.(append한다.)
-
         document.querySelector("#msgList").append(li);
       });
     </script>
