@@ -12,7 +12,7 @@ public class MyUtil {
 	//	public void send() {
 	//		System.out.println("전송합니다.");
 	//	}
-	//new MyUtiㅣ().send(); 이렇게 사용함 원래 보통.
+	//new MyUtil().send(); 이렇게 사용함 원래 보통.
 	// new를 사용해서 객체를 먼저 만들고 . 찍어서 사용
 	
 	public static void send() {
