@@ -34,12 +34,12 @@ public class Test {
 		
 	}
 	
-	//String type을 메소드의 인지로 전달 받는 메소드
+	//String type을 메소드의 인자로 전달 받는 메소드
 	public void setName(String name) {
 		
 	}
 	
-	//Airplane type을 메소드의 인지로 전달 받는 메소드
+	//Airplane type을 메소드의 인자로 전달 받는 메소드
 	public void setPlane(Airplane plane) {
 		
 	}
