@@ -32,6 +32,7 @@
         //만일 시작된 state라면 "중단"으로 바꾸고
         //중단된 state라면(시작된 state가 아니라면) "시작"으로 바꾼다.
         //(상태값 관리) --> 상태값이 두개일때는 toggle 사용가능
+        // 상태가 두가지라면 불리언으로 관리
         if (isStarted) {
           isStarted = false;
           event.target.innerText = "시작";
