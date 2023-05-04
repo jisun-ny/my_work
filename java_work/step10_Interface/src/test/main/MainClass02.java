@@ -6,7 +6,7 @@ import test.mypac.Volume;
 
 public class MainClass02 {
 	public static void main(String[] args) {
-		//다형성 확인
+		//다형성 확인 --> 다형성 : 자손 클래스의 인스턴스를 조상타입의 참조변수로 참조하는 것이 가능
 		MyRemocon r1= new MyRemocon();
 		Remocon r2 = r1;
 		Object r3 = r1;
