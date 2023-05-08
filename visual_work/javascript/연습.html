@@ -28,15 +28,55 @@
       const backImg = new Image();
       backImg.src = "images/background.jpg";
 
+      const rabbitImg1 = new Image();
+      rabbitImg1.src = "images/rabbit_1.png";
+
+      const rabbitImg2 = new Image();
+      rabbitImg2.src = "images/rabbit2.png";
+
+      const rabbitImgs = [rabbitImg1, rabbitImg2];
+
       let snipeX = 0,
         snipeY = 0;
 
+      let rabbitX = 400,
+        rabbitY = 250;
+
+      let rabbitIndex = 0;
+      let count = 0;
+
       setInterval(() => {
+        count++;
         context.drawImage(backImg, 0, 0, 800, 500);
         context.drawImage(snipeImg, snipeX - 50, snipeY - 50, 100, 100);
 
-        for (let i = 0)
-      }, 100);
+        // 토기보다 총알자국이 먼저 그려져야함
+        for (let i = 0; i < holes.length; i++) {
+          let tmp = holes[i];
+          context.drawImage(holeImg, tmp.x - 10, tmp.y - 10, 20, 20);
+        }
+
+        context.drawImage(
+          rabbitImgs[rabbitIndex],
+          rabbitX - 50,
+          rabbitY - 50,
+          100,
+          100
+        );
+
+        if (count % 20 == 0) {
+          rabbitIndex++;
+          if (rabbitIndex == 2) {
+            rabbitIndex = 0;
+          }
+        }
+
+        let ranNum = parseInt(Math.random() * 100);
+        if (ranNum == 10) {
+          rabbitX = Math.random() * 700 + 50;
+          rabbitY = Math.random() * 400 + 50;
+        }
+      }, 10);
 
       canvas.addEventListener("mousemove", (e) => {
         snipeX = e.offsetX;

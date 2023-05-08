@@ -60,6 +60,10 @@
       //카운트를 셀 변수
       let count = 0;
 
+      //효과음 로딩하기
+      const fireSound = new Audio("sounds/fire.wav");
+      const dieSound = new Audio("sounds/birddie.mp3");
+
       setInterval(() => {
         //함수가 호출될 때마다 count를 1씩 증가 시킨다
         count++;
@@ -123,16 +127,41 @@
       //  event는 마우스무브 이벤트 객체 {}가 전달되는 것임
       canvas.addEventListener("mousemove", (event) => {
         //이벤트가 발생한 곳의 canvas 내에서의 좌표
+        //이벤트가 발생한곳의 canvas 내에서의 좌표를 snipeX, snipeY 에 반영
         snipeX = event.offsetX;
         snipeY = event.offsetY;
         //지정된 사각형 영역을 지우기 clearRect(x, y, width, height);
       });
       canvas.addEventListener("mousedown", (event) => {
+        // mousedown 이벤트가 발생한 곳의 좌표를 변수에 담아놓고 아래서 2번 활용
+        let x = event.offsetX;
+        let y = event.offsetY;
+
         //이벤트가 발생한 곳의 좌표를 object에 담는다
-        //여기가 실행될떄마다 오브젝트가만들어진다.
-        const hole = { x: event.offsetX, y: event.offsetY };
+        //여기가 실행될떄마다 새로운 오브젝트가 만들어진다.
+        // const hole = { x: x, y: y };
+        //          key: value
+        const hole = { x, y }; //위의 표현식을 줄여서 이렇게 쓸 수 있다.(ECMA6)
         //holes 배열에 저장(누적) 시킨다.
         holes.push(hole);
+        //재생 위치를 처음으로 리셋 후 재생하면 연속 재생 가능
+        //총소리 파일이 2.4초이기때문에 클릭할때 마다 처음으로 리셋하지 않으면 2.4초 동안은 재생 되지 않음
+        fireSound.currentTime = 0;
+        //총소리 재생
+        fireSound.play();
+
+        // 토끼가 총에 맞았는지 판별해서 맞았으면 효과음 재생(if문)
+        //토끼가 맞은게 사실이라면
+        let isRabbitDie =
+          rabbitX - 50 < x &&
+          x < rabbitX + 50 &&
+          rabbitY - 50 < y &&
+          y < rabbitY + 50;
+
+        if (isRabbitDie) {
+          dieSound.currentTime = 0;
+          dieSound.play();
+        }
 
         /* 이 부분은 그냥 참고 */
         // holeX = event.offsetX;
