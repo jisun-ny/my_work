@@ -29,11 +29,13 @@ public class MainClass01 {
 			double result = num + 100;
 			System.out.println("입력한 숫자 + 100 : " + result);
 			}catch(NumberFormatException nfe) {
+				//nfe에는 NumberFormatException의 참조값이 들어있다.
 				/*
 				 * 실행 스택에서 일어난 일을 콘솔창에 출력하기
 				 * (자세한 예외 정보를 예외 객체가 콘솔창에 출력하게 하기
 				 */
 				nfe.printStackTrace();
+				//예외에 대한 자세한 정보 콘솔창에 출력
 			}
 		
 		
